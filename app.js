@@ -11,7 +11,7 @@ var app = express();
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === '12345') {
+      req.query['hub.verify_token'] === 'ZLyotBNYCL27c26MA71f8kySxwzEja0O') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
