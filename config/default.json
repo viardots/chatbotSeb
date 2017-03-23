@@ -2,6 +2,6 @@
   "serverUrl": "<insert your server url here>",
   "weatherApiToken": "<insert your weather api token here>",
   "googleApiToken": "<insert your google geolocalisation api token here>",
-  "pageAccessToken": "<insert your facebook page token here>",
+  "pageAccessToken": "EAAD7T2J0gEsBALmdWu1xAZCDD4xLYk0hlOZBQmOYxZCZBhlUGoP36kfKOXFkmL23yFOCXoQHAWtebHTkJPdnAwgTZCokoIFqJAZCladrOHgkvlV6svWi3zdVPowVUOESab3ZCnUB5bxe1DjTzAjeVLmO9HcALimozyz5lpHbL2U3AZDZD",
   "validationToken": "<insert your facebook validation token here>"
 }
