@@ -57,7 +57,7 @@ function sendTextMessage(recipientId, messageText) {
 
 function authenticate(req) {
   if (req.query['hub.mode'] === 'subscribe' &&
-    req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    req.query['hub.verify_token'] === 'ZLyotBNYCL27c26MA71f8kySxwzEja0O') {
     console.log("Validating webhook");
     return true;
   } else {
