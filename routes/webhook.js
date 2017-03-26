@@ -42,6 +42,7 @@ router.post('/', function (req, res) {
             var message = event.message;
             switch(user.status) {
               case 'station':
+                chatService.sendTextMessage(senderId, message.text+"?");
                 weatherService.getGeolocalisation(message.text)
                   .then(function (body) {
                     var response = parser.parse(body).results;
