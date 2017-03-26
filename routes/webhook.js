@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
 /* POST route for receiving message */
 router.post('/', function (req, res) {
   var data = req.body;
+  chatService.sendTextMessage(JSON.stringify(data))
   console.log(data)
   // Make sure this is a page subscription
   if (data.object === 'page') {
