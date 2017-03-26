@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
 /* POST route for receiving message */
 router.post('/', function (req, res) {
   var data = req.body;
+  console.log(data)
   // Make sure this is a page subscription
   if (data.object === 'page') {
     // Iterate over each entry - there may be multiple if batched
@@ -35,7 +36,7 @@ router.post('/', function (req, res) {
               createdAt: timeOfEvent,
               status: 'station'
             });
-            chatService.sendTextMessage(senderId, 'Hello, my name is Shauny️️ nice to meet you ! \nI\'m here to help you to find the best spot ❄️️❄️️❄️️️ \nTo do so, send me a station name');
+            chatService.sendTextMessage(senderId, 'Salut, je m\'appelle chatBotSeb, enchanté ! De quelle ville souhaites tu avoir '+senderId+'\n');
           } else {
             var user = userService.getUser(senderId);
             var message = event.message;
