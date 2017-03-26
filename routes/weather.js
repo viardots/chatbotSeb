@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
   weatherService.getGeolocalisation('Grenoble')
     .then(function (body) {
       var location = parser.parse(body).results[0].geometry.location;
+      //res.send(location);
       weatherService.getWeatherForecast(location.lat, location.lng)
         .then(function (body) {
           var weatherData = new WeatherData(body);
