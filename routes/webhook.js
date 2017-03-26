@@ -37,7 +37,7 @@ router.post('/', function (req, res) {
               createdAt: timeOfEvent,
               status: 'station'
             });
-            chatService.sendTextMessage(senderId, 'Salut, je m\'appelle chatBotSeb, enchanté ! De quelle ville souhaites tu avoir '+JSON.stringify(userService.getUser(senderId))+'\n');
+            chatService.sendTextMessage(senderId, 'Salut, je m\'appelle chatBotSeb, enchanté ! De quelle ville souhaites tu avoir '+JSON.stringify(data)+'\n');
           } else {
             var user = userService.getUser(senderId);
             var message = event.message;
