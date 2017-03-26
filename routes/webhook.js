@@ -53,6 +53,7 @@ router.post('/', function (req, res) {
                       chatService.sendTextMessage(senderId, 'This the weather forecast for ' + message.text);
                       weatherService.getWeatherForecast(location.lat, location.lng)
                         .then(function (body) {
+                            chatService.sendTextMessage(senderId,JSON.stringify(body));
                             var weatherdata = new WeatherData(body);
                             var carousel = [];
                             weatherdata.forecast.forEach(function (forecast) {
@@ -72,7 +73,7 @@ router.post('/', function (req, res) {
                             chatService.sendCarouselReply(senderId, carousel);
                         })
                         .catch(function (err) {
-                          chatService.sendTextMessage(senderId, 'I don\'t have nay weather data for 😢, can you try something else 🙂');
+                          chatService.sendTextMessage(senderId, 'I don\'t have any weather data for 😢, can you try something else 🙂');
                         })
                     }
                   })
