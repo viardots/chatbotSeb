@@ -8,7 +8,7 @@ const
 
 /* GET weather page. */
 router.get('/', function(req, res, next) {
-  weatherService.getGeolocalisation('Grenoble')
+  weatherService.getGeolocalisation(req.query('city'))
     .then(function (body) {
       var location = parser.parse(body).results[0].geometry.location;
       //res.send(location);
