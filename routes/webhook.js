@@ -37,7 +37,7 @@ router.post('/', function (req, res) {
               createdAt: timeOfEvent,
               status: 'station'
             });
-            chatService.sendTextMessage(senderId, 'Salut, je m\'appelle chatBotSeb, enchanté ! De quelle ville souhaites tu avoir '+JSON.stringify(data)+'\n');
+            chatService.sendTextMessage(senderId, 'Salut, je m\'appelle chatBotSeb, enchanté ! De quelle ville souhaites tu avoir ?\n');
           } else {
             var user = userService.getUser(senderId);
             var message = event.message;
@@ -52,8 +52,10 @@ router.post('/', function (req, res) {
                     } else {
                       var location = response[0].geometry.location;
                       chatService.sendTextMessage(senderId, 'This the weather forecast for ' + message.text);
+                      console.log("Météo demandée")
                       weatherService.getWeatherForecast(location.lat, location.lng)
                         .then(function (body) {
+                            console.log("Météo reçue")
                             chatService.sendTextMessage(senderId,JSON.stringify(body));
                             var weatherdata = new WeatherData(body);
                             var carousel = [];
