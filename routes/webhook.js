@@ -55,9 +55,10 @@ router.post('/', function (req, res) {
                       console.log("Météo demandée")
                       weatherService.getWeatherForecast(location.lat, location.lng)
                         .then(function (body) {
-                            console.log("Météo reçue")
-                            chatService.sendTextMessage(senderId,JSON.stringify(body));
-                            var weatherdata = new WeatherData(body);
+                            chatService.sendTextMessage("Météo reçue")
+                            //console.log("Météo reçue")
+                            //chatService.sendTextMessage(senderId,JSON.stringify(body));
+                            /*var weatherdata = new WeatherData(body);
                             var carousel = [];
                             weatherdata.forecast.forEach(function (forecast) {
                               carousel.push(
@@ -73,7 +74,7 @@ router.post('/', function (req, res) {
                                 }
                               )
                             })
-                            chatService.sendCarouselReply(senderId, carousel);
+                            chatService.sendCarouselReply(senderId, carousel);*/
                         })
                         .catch(function (err) {
                           chatService.sendTextMessage(senderId, 'I don\'t have any weather data for 😢, can you try something else 🙂');
