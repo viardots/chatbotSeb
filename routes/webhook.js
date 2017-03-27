@@ -51,7 +51,7 @@ router.post('/', function (req, res) {
                       chatService.sendTextMessage(senderId, 'I don\'t find any city with this name 😢, can you verify the typo or try something else 🙂');
                     } else {
                       var location = response[0].geometry.location;
-                      chatService.sendTextMessage(senderId, 'This the weather forecast for ' + message.text);
+                      chatService.sendTextMessage(senderId, 'This the weather forecast for ' + message.text + location);
                       console.log("Météo demandée")
                       weatherService.getWeatherForecast(location.lat, location.lng)
                         .then(function (body) {
